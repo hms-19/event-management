@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
+
+// Admin Routes
+
 Route::middleware([
     'auth:sanctum',
+    'admin-auth',
     config('jetstream.auth_session'),
     'verified'
 ])->prefix('admin')->group(function () {
@@ -39,3 +43,17 @@ Route::middleware([
     });
 
 });
+
+
+// User Auth Routes
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/profile', function () {
+        return view('profile.show');
+    })->name('profile');
+});
+
