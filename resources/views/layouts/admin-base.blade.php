@@ -136,22 +136,17 @@
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
 					<li class="nav-label first">Main Menu</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-144-layout"></i>
-							<span class="nav-text">Dashboard</span>
-						</a>
+					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <i class="flaticon-144-layout"></i>
+                            <span class="nav-text">Dashboard & Users</span>
+                        </a>
                         <ul aria-expanded="false">
-							<li><a href="">Dashboard</a></li>
-                            <li><a href="">Order</a></li>
-						</ul>
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                            <li><a href="{{ route('users.index') }}">User Management</a></li>
+                        </ul>
 
                     </li>
-
                 </ul>
-				<div class="copyright">
-					<p><strong>Event Management Admin Dashboard</strong> © 2023 All Rights Reserved</p>
-					<p class="fs-12">Made with <span class="heart"></span> by Webhub</p>
-				</div>
 			</div>
         </div>
         <!--**********************************

@@ -1152,10 +1152,10 @@
 
 					datasets: [{
 						label: "Sales Stats",
-						backgroundColor: ['#EB8153'],
-						borderColor: '#EB8153',
-						pointBackgroundColor: '#EB8153',
-						pointBorderColor: '#EB8153',
+						backgroundColor: ['#eb8153'],
+						borderColor: '#eb8153',
+						pointBackgroundColor: '#eb8153',
+						pointBorderColor: '#eb8153',
 						borderWidth:4,
 						borderRadius:10,
 						pointHoverBackgroundColor: '#1EAAE7',

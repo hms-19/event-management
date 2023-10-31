@@ -39,7 +39,7 @@ var dzPiety = function(){
     var handlePietyPie = function(){
 		if(jQuery('span.pie').length > 0 ){
 			$("span.pie").peity("pie", {
-				fill: ['#EB8153', 'rgba(235, 129, 83, .3)'], 
+				fill: ['#eb8153', 'rgba(235, 129, 83, .3)'], 
 				width: "100",
 				height: "100"
 			});
@@ -59,7 +59,7 @@ var dzPiety = function(){
 		if(jQuery('.peity-line').length > 0 ){
 			$(".peity-line").peity("line", {
 				fill: ["rgba(235, 129, 83, .5)"], 
-				stroke: '#EB8153', 
+				stroke: '#eb8153', 
 				width: "100%",
 				height: "100"
 			});
@@ -94,7 +94,7 @@ var dzPiety = function(){
 	var handlePietyBar = function(){
 		if(jQuery('.bar').length > 0 ){
 			$(".bar").peity("bar", {
-				fill: ["#EB8153", "#6418C3", "#3693FF"],  
+				fill: ["#eb8153", "#6418C3", "#3693FF"],  
 				width: "100%",
 				height: "100",
 			});
@@ -104,7 +104,7 @@ var dzPiety = function(){
 	var handlePietyBar1 = function(){
 		if(jQuery('.bar1').length > 0 ){
 			$(".bar1").peity("bar", {
-				fill: ["#EB8153", "#6418C3", "#3693FF"],    
+				fill: ["#eb8153", "#6418C3", "#3693FF"],    
 				//width: "100%",
 				width: getGraphBlockSize('.bar1'),
 				height: "140"
@@ -115,7 +115,7 @@ var dzPiety = function(){
 	var handlePietyBarColours1 = function(){
 		if(jQuery('.bar-colours-1').length > 0 ){
 			$(".bar-colours-1").peity("bar", {
-				fill: ["#EB8153", "#6418C3", "#3693FF"],  
+				fill: ["#eb8153", "#6418C3", "#3693FF"],  
 				width: "100",
 				height: "100"
 			});
@@ -159,7 +159,7 @@ var dzPiety = function(){
     var handlePietyColours2 = function(){
 		if(jQuery('.pie-colours-2').length > 0 ){
 			$(".pie-colours-2").peity("pie", {
-				fill: ["#EB8153", "#6418C3", "#3693FF", "#ff5c00", "#FF3E3E"],
+				fill: ["#eb8153", "#6418C3", "#3693FF", "#ff5c00", "#FF3E3E"],
 				width: "100",
 				height: "100"
 			});
