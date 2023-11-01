@@ -24,10 +24,12 @@
 	<link href="{{ asset('assets/backend/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet">
     <!-- Daterange picker -->
-    <link href="{{ asset('assets/backend/vendor/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-    <!-- Pick date -->
-    <link rel="stylesheet" href="{{ asset('assets/backend/vendor/pickadate/themes/default.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/backend/vendor/pickadate/themes/default.date.css') }}">
+
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
     <style>
         /* preview img */
@@ -42,6 +44,20 @@
         object-fit: cover;
         border-radius: 10px;
        }
+
+       .gj-datepicker button{
+        display: none !important;
+       }
+
+       #datepicker{
+        width: 100% !important;
+       }
+
+       .select2-container--bootstrap-5 .select2-selection {
+            min-height: calc(2em + 0.75rem + 2px) !important;
+            padding: -5.625rem .75rem !important;
+        }
+
     </style>
 </head>
 <body>
@@ -148,8 +164,16 @@
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li><a href="{{ route('users.index') }}">User Management</a></li>
                         </ul>
-
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-077-menu-1"></i>
+                        <span class="nav-text">Event Management</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ route('events.index') }}">Event</a></li>
+                        <li><a href="{{ route('dashboard') }}">Register Event</a></li>
+                    </ul>
+                </li>
                 </ul>
 			</div>
         </div>
@@ -217,9 +241,12 @@
     {{-- <script src="{{ asset('assets/backend/js/styleSwitcher.js') }}"></script> --}}
 
     <!-- Daterangepicker -->
-    <script src="{{ asset('assets/backend/vendor/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/vendor/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/plugins-init/bs-daterange-picker-init.js') }}"></script>
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+
+
     <script type="text/javascript">
 
 
@@ -275,6 +302,47 @@
             }
             else{
                 $(".fail_message").addClass('d-none')
+            }
+        })
+    </script>
+
+    <script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap5'
+        });
+
+        $( '#multiple-select-field' ).select2( {
+            theme: "bootstrap-5",
+            width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+            placeholder: $( this ).data( 'placeholder' ),
+            closeOnSelect: false,
+        } );
+    </script>
+
+    <script>
+        
+        
+        $("#one_time").on('change', function() {
+            
+            let togBtn = $(this);
+            togBtn.val(togBtn.prop('checked'));
+            
+            if(togBtn.val() == 'true'){
+                $(".is_one_time").val(1);
+                $("#datepicker").addClass('d-block')
+                $("#datepicker").removeClass('d-none')
+
+                $("#day-select").addClass('d-none')
+                $("#day-select").removeClass('d-block')
+            }
+            else{
+                $(".is_one_time").val(0);
+
+                $("#datepicker").addClass('d-none')
+                $("#datepicker").removeClass('d-block')
+
+                $("#day-select").addClass('d-block')
+                $("#day-select").removeClass('d-none')   
             }
         })
     </script>

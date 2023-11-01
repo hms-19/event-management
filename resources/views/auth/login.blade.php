@@ -52,10 +52,10 @@
                                 <div class="card-header">
                                     <h4 class="card-title">Login</h4>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body d-flex flex-column gap-5 justify-content-center align-items-start w-100">
                                     <x-jet-validation-errors class="mb-4 text-danger" />
-                                    <div class="basic-form">
-                                        <form method="POST" action="{{ route('login') }}">
+                                    <div class="basic-form w-100">
+                                        <form method="POST" action="{{ route('login') }}" class="w-100">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="email" id="email" name="email" :value="old('email')" required autofocus  class="form-control input-default " placeholder="Enter Your Email">
@@ -69,6 +69,9 @@
                                     </div>
                                 </div>
                             </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.iona.edu/sites/default/files/styles/scale/public/2023-04/ancillary-images/three-students-mcspedon-sunny-day.jpg?itok=PeWIhPn6" alt="" class="w-100 h-100 object-cover">
                     </div>
                 </div>
             </div>

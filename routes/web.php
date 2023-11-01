@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 
 // Admin Routes
@@ -40,6 +40,17 @@ Route::middleware([
         Route::get('/edit/{user}','edit')->name('edit');
         Route::patch('/update/{user}','update')->name('update');
         Route::get('/delete/{user}','destroy')->name('delete');
+    });
+
+    // event
+
+    Route::controller(EventController::class)->prefix('events')->name('events.')->group(function() {
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{event}','edit')->name('edit');
+        Route::patch('/update/{event}','update')->name('update');
+        Route::get('/delete/{event}','destroy')->name('delete');
     });
 
 });

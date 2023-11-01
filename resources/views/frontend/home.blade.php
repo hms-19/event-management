@@ -2,7 +2,36 @@
 @section('title','Home')
     
 @section('content')
-<section class="upcoming-meetings" id="meetings">
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+            @foreach ($oneTimeEvents as $event)
+              <div class="item">
+                <div class="icon">
+                  <img src="{{ asset('assets/frontend/images/service-icon-01.png') }}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>{{ $event->title }}</h4>
+                  <h5 class="text-warning fw-bold">{{ $event->date }}</h5>
+                  <p>{{ $event->start_time.' - '.$event->end_time }}</p>
+                  <p>
+                    <i>{{ $event->location ?? 0 }}</i>
+                  </p>
+                  <p>
+                    <strong class="fs-4 fw-bold">{{ $event->charges == 0.00 ? 'Free' : $event->charges}}</strong>
+                  </p>
+                </div>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
