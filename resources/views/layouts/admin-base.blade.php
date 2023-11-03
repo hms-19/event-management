@@ -173,6 +173,14 @@
                         <li><a href="{{ route('events.index') }}">Event</a></li>
                         <li><a href="{{ route('dashboard') }}">Register Event</a></li>
                     </ul>
+
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-077-menu-1"></i>
+                        <span class="nav-text">Announcement Management</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ route('announcements.index') }}">Announcement</a></li>
+                    </ul>
                 </li>
                 </ul>
 			</div>
@@ -246,6 +254,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <script type="text/javascript">
 
@@ -345,6 +354,14 @@
                 $("#day-select").removeClass('d-none')   
             }
         })
+    </script>
+
+    <script>
+        tinymce.init({
+        selector: 'textarea#content',
+        plugins: 'powerpaste advcode table lists checklist',
+        toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
+        });
     </script>
 </body>
 </html>

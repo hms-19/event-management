@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\HomeController;
@@ -51,6 +52,17 @@ Route::middleware([
         Route::get('/edit/{event}','edit')->name('edit');
         Route::patch('/update/{event}','update')->name('update');
         Route::get('/delete/{event}','destroy')->name('delete');
+    });
+
+    // announcements
+
+    Route::controller(AnnouncementController::class)->prefix('announcements')->name('announcements.')->group(function() {
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{announcement}','edit')->name('edit');
+        Route::patch('/update/{announcement}','update')->name('update');
+        Route::get('/delete/{announcement}','destroy')->name('delete');
     });
 
 });
