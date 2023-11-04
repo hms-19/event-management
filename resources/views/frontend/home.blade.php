@@ -2,6 +2,32 @@
 @section('title','Home')
     
 @section('content')
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{{ asset('assets/frontend/images/course-video.mp4') }}" type="video/mp4" />
+      </video>
+  
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h6>Hello Students</h6>
+              <h2>Welcome to Education</h2>
+              <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
+              <div class="main-button-red">
+                  <div><a href="#contact">Join Us Now!</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
+    
   <section class="services">
     <div class="container">
       <div class="row">
@@ -36,94 +62,55 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Upcoming Meetings</h2>
+            <h2>Latest Announcements</h2>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="categories">
-            <h4>Meeting Catgories</h4>
-            <ul>
-              <li><a href="#">Sed tempus enim leo</a></li>
-              <li><a href="#">Aenean molestie quis</a></li>
-              <li><a href="#">Cras et metus vestibulum</a></li>
-              <li><a href="#">Nam et condimentum</a></li>
-              <li><a href="#">Phasellus nec sapien</a></li>
+            <h4>Announcements categories</h4>
+            <ul class="d-flex flex-column">
+              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 1">Category 1</a></li>
+              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 2">Category 2</a></li>
+              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 3">Category 3</a></li>
+              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 4">Category 4</a></li>
             </ul>
             <div class="main-button-red">
-              <a href="meetings.html">All Upcoming Meetings</a>
+              <a href="/announcements">All Announcements</a>
             </div>
           </div>
         </div>
         <div class="col-lg-8">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$22.00</span>
+          <div class="row"> 
+            @if (count($announcements) > 0)
+                @foreach($announcements as $announcement)
+                  <div class="col-lg-6">
+                    <div class="meeting-item">
+                      <div class="thumb">
+                        <div class="price">
+                          <span>{{ $announcement->category }}</span>
+                        </div>
+                        <a href="/announcements/{{ $announcement->id }}"><img src="{{ asset($announcement->image) }}" style="height: 200px; object-fit:cover;" alt="New Lecturer Meeting"></a>
+                      </div>
+                        <div class="down-content d-flex flex-wrap justify-content-between">
+                          <div>
+                            <div class="date">
+                              <h6>{{ Carbon\Carbon::parse($announcement->created_at)->format('M') }}<span>{{ Carbon\Carbon::parse($announcement->created_at)->format('d') }}</span></h6>
+                            </div>
+                            <a href="/announcements/{{ $announcement->id }}"><h4>{{ $announcement->title }}</h4></a>
+                          </div>
+                          <div class="">
+                            <a href="">
+                              <i class="icon fa fa-comment"></i>
+                            </a>
+                          </div>
+                        </div>
+                    </div>
                   </div>
-                  <a href="meeting-details.html"><img src="{{ asset('assets/frontend/images/meeting-01.jpg') }}" alt="New Lecturer Meeting"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>10</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$36.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="{{ asset('assets/frontend/images/meeting-02.jpg') }}" alt="Online Teaching"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>24</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$14.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="{{ asset('assets/frontend/images/meeting-03.jpg') }}" alt="Higher Education"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>26</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$48.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="{{ asset('assets/frontend/images/meeting-04.jpg') }}" alt="Student Training"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>30</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
+                @endforeach
+            @else
+                <h3 class="text-center">There ios no announcements</h3>
+            @endif
+
           </div>
         </div>
       </div>
@@ -223,272 +210,37 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Our Popular Courses</h2>
+            <h2>You should check it out</h2>
           </div>
         </div>
         <div class="col-lg-12">
+          @if (count($randomAnnouncements) > 0)
           <div class="owl-courses-item owl-carousel">
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-01.jpg') }}" alt="Course One">
-              <div class="down-content">
-                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
+            @foreach ($randomAnnouncements as $announcement)
+              <div class="item">
+                  <a href="/announcements/{{ $announcement->id }}">
+                    <img src="{{ asset($announcement->image) }}" alt="Course One" style="height: 200px; object-fit:cover;">
+                    <div class="down-content">
+                      <h4>{{ $announcement->title }}</h4>
+                      <div class="info">
+                        <div class="d-flex justify-content-between">
+                          <div class="">
+                            <span>{{ $announcement->category }}</span>
+                          </div>
+                          <div class="">
+                              <a href="">
+                                <i class="icon fa fa-comment"></i>
+                              </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-4">
-                       <span>$160</span>
-                    </div>
-                  </div>
-                </div>
+                  </a>
               </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-02.jpg') }}" alt="Course Two">
-              <div class="down-content">
-                <h4>Curabitur molestie dignissim purus vel</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$180</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-03.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Nulla at ipsum a mauris egestas tempor</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$140</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-04.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Aenean molestie quis libero gravida</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$120</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-01.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$250</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-02.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>TemplateMo is the best website for Free CSS</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$270</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-03.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Web Design Templates at your finger tips</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$340</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-04.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Please visit our website again</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$360</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-01.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Responsive HTML Templates for you</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$400</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-02.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Download Free CSS Layouts for your business</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$430</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-03.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Morbi in libero blandit lectus cursus</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$480</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="{{ asset('assets/frontend/images/course-04.jpg') }}" alt="">
-              <div class="down-content">
-                <h4>Curabitur molestie dignissim purus</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$560</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
+          @else
+              <h3 class="text-center">There is no announcement !</h3>
+          @endif
           </div>
         </div>
       </div>

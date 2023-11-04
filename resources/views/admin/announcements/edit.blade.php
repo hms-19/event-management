@@ -7,7 +7,7 @@
 <div class="w-100 h-100 d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-8 mx-auto">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Edit Announcement</h4>
@@ -22,7 +22,7 @@
                                 </div>
                             @endif
                             <div class="basic-form">
-                                <form method="POST" action="{{ route('announcements.update',['announcement' => $announcement]) }}">
+                                <form method="POST" action="{{ route('announcements.update',['announcement' => $announcement]) }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')
 
@@ -70,7 +70,7 @@
                                         <div class="form-group mt-3">
                                             <input type="file" class="form-control-file" name="image" id="image">
                                         </div>
-                                        <img src="{{ asset(''.$announcement->image) }}" alt="" style="width:100px;height:60px;object-fit:cover">
+                                        <img src="{{ asset(''.$announcement->image) }}" alt="" id="edit-image" style="width:100px;height:60px;object-fit:cover">
                                     </div>
 
                                     @error('image')

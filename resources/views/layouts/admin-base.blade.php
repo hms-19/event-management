@@ -363,5 +363,19 @@
         toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
         });
     </script>
+
+
+    <script>
+    const fileInput = document.getElementById('image');
+  
+    fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+            document.getElementById("edit-image").style.display = 'none'
+        } else {
+          document.getElementById("edit-image").style.display = 'block'
+        }
+    });
+  
+  </script>
 </body>
 </html>

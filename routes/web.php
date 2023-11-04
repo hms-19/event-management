@@ -67,7 +67,6 @@ Route::middleware([
 
 });
 
-
 // User Auth Routes
 
 Route::middleware([
@@ -80,3 +79,6 @@ Route::middleware([
     })->name('profile');
 });
 
+
+Route::get('/announcements',[\App\Http\Controllers\AnnouncementController::class,'index'])->name('announcement.list');
+Route::get('/announcements/{id}',[\App\Http\Controllers\AnnouncementController::class,'show'])->name('announcement.detail');

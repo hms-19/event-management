@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class AnnouncementController extends Controller
@@ -26,7 +27,6 @@ class AnnouncementController extends Controller
             'category' => ['required', 'string'],
             'image' => ['required','image','mimes:jpeg,png,jpg,webp','max:4080'],
         ]);
-
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -55,11 +55,14 @@ class AnnouncementController extends Controller
             'category' => ['required', 'string'],
         ]);
 
+
         $oldFileName = $announcement->image;
+
 
         $announcement->title = $request->input('title');        
         $announcement->content = $request->input('content'); 
         $announcement->category = $request->input('category');
+
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -67,11 +70,15 @@ class AnnouncementController extends Controller
             $path = $image->storeAs('public/images', $filename);
     
             $announcement->image = 'images/' . $filename;
-            
-            if ($oldFileName) {
-                Storage::delete(public_path(''.$oldFileName));
+                        
+            if (isset($oldFileName)) {
+                $image_path = public_path($oldFileName);
+                if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
             }
         }
+
 
         $announcement->save();
 
@@ -79,6 +86,10 @@ class AnnouncementController extends Controller
     }
 
     public function destroy(Announcement $announcement){
+        $image_path = public_path($announcement->image);
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+        }
         $announcement->delete();
         return back()->with('success','Announcement Deleted Successfully!');
     }

@@ -25,13 +25,13 @@
         <!--*******************
         Preloader start
     ********************-->
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
             <div class="sk-child sk-bounce2"></div>
             <div class="sk-child sk-bounce3"></div>
         </div>
-    </div>
+    </div> --}}
     <!--*******************
         Preloader end
     ********************-->
@@ -48,7 +48,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto">
-                            <div class="card">
+                            <div class="card" style="height: 100% !important">
                                 <div class="card-header">
                                     <h4 class="card-title">Login</h4>
                                 </div>

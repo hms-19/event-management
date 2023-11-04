@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,6 +41,10 @@ class HomeController extends Controller
                             ->get();
         }
 
-        return view("frontend.home",compact("oneTimeEvents"));
+        $announcements = Announcement::orderBy('created_at','desc')->limit(4)->get();
+
+        $randomAnnouncements = Announcement::inRandomOrder()->orderBy('created_at','desc')->limit(12)->get();
+
+        return view("frontend.home",compact("oneTimeEvents","announcements","randomAnnouncements"));
     }
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -20,13 +19,8 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/templatemo-edu-meeting.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/lightbox.css') }}">
-<!--
 
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
--->
+    @yield('css')
   </head>
 
 <body>
@@ -66,11 +60,11 @@ https://templatemo.com/tm-569-edu-meeting
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
+                    
                       <ul class="nav">
-                          <li><a href="/" class="active">Home</a></li>
-                          <li><a href="/">Event</a></li>
-                          <li><a href="/">Announcement</a></li> 
-                          <li><a href="/">Contact Us</a></li>   
+                          <li><a href="/" class="{{ request()->segment(1) == null ? 'active' : '' }}">Home</a></li>
+                          <li><a href="/" class="{{ request()->segment(1) == 'events' ? 'active' : '' }}">Event</a></li>
+                          <li><a href="/announcements" class="{{ request()->segment(1) == 'announcements' ? 'active' : '' }}">Announcement</a></li> 
                           @auth
                             @if (auth()->user()->role == 'admin')
                                 <li><a href="/admin" class="bg-warning px-3">Dashboard</a></li>   
@@ -92,33 +86,6 @@ https://templatemo.com/tm-569-edu-meeting
   </header>
   <!-- ***** Header Area End ***** -->
 
-
-    <!-- ***** Main Banner Area Start ***** -->
-    <section class="section main-banner" id="top" data-section="section1">
-      <video autoplay muted loop id="bg-video">
-          <source src="{{ asset('assets/frontend/images/course-video.mp4') }}" type="video/mp4" />
-      </video>
-  
-      <div class="video-overlay header-text">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="caption">
-              <h6>Hello Students</h6>
-              <h2>Welcome to Education</h2>
-              <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
-              <div class="main-button-red">
-                  <div><a href="#contact">Join Us Now!</a></div>
-              </div>
-          </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
-    <!-- ***** Main Banner Area End ***** -->
-
-    
   @yield('content')
 
   <section class="contact-us" id="contact">
@@ -254,7 +221,8 @@ https://templatemo.com/tm-569-edu-meeting
           checkSection();
         });
     </script>
-</body>
+
+
 
 </body>
 </html>
