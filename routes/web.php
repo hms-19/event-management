@@ -82,3 +82,4 @@ Route::middleware([
 
 Route::get('/announcements',[\App\Http\Controllers\AnnouncementController::class,'index'])->name('announcement.list');
 Route::get('/announcements/{id}',[\App\Http\Controllers\AnnouncementController::class,'show'])->name('announcement.detail');
+Route::get('/events',[\App\Http\Controllers\EventController::class,'index'])->name('events.list');

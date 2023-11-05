@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/templatemo-edu-meeting.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/lightbox.css') }}">
-
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid/main.css" rel="stylesheet" />
     @yield('css')
   </head>
 
@@ -63,7 +65,7 @@
                     
                       <ul class="nav">
                           <li><a href="/" class="{{ request()->segment(1) == null ? 'active' : '' }}">Home</a></li>
-                          <li><a href="/" class="{{ request()->segment(1) == 'events' ? 'active' : '' }}">Event</a></li>
+                          <li><a href="/events" class="{{ request()->segment(1) == 'events' ? 'active' : '' }}">Event</a></li>
                           <li><a href="/announcements" class="{{ request()->segment(1) == 'announcements' ? 'active' : '' }}">Announcement</a></li> 
                           @auth
                             @if (auth()->user()->role == 'admin')
@@ -175,6 +177,9 @@
     <script src="{{ asset('assets/frontend/js/video.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/slick-slider.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
@@ -223,6 +228,6 @@
     </script>
 
 
-
+    @yield('js')
 </body>
 </html>
