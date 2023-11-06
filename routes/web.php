@@ -49,10 +49,14 @@ Route::middleware([
         Route::get('/','index')->name('index');
         Route::get('/create','create')->name('create');
         Route::post('/store','store')->name('store');
+        Route::get('/show/{event}','show')->name('show');
         Route::get('/edit/{event}','edit')->name('edit');
         Route::patch('/update/{event}','update')->name('update');
         Route::get('/delete/{event}','destroy')->name('delete');
     });
+
+    Route::get('/events/edit-status/{event}/{user_id}',[EventController::class,'editStatus'])->name('events.edit-status');
+    Route::post('/events/update-status/{event}/{event_user_id}',[EventController::class,'updateStatus'])->name('events.update-status');
 
     // announcements
 
@@ -77,9 +81,12 @@ Route::middleware([
     Route::get('/profile', function () {
         return view('profile.show');
     })->name('profile');
+
+    Route::post('/register/event/{id}',[\App\Http\Controllers\EventController::class,'submitEvent'])->name('events.submit');
 });
 
 
 Route::get('/announcements',[\App\Http\Controllers\AnnouncementController::class,'index'])->name('announcement.list');
 Route::get('/announcements/{id}',[\App\Http\Controllers\AnnouncementController::class,'show'])->name('announcement.detail');
 Route::get('/events',[\App\Http\Controllers\EventController::class,'index'])->name('events.list');
+Route::get('/events/{id}',[\App\Http\Controllers\EventController::class,'register'])->name('events.register');

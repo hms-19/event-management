@@ -85,7 +85,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="/admin/dashboard" class="brand-logo">
+            <a href="/" class="brand-logo">
                 <h2 class="text-primary fw-bold fs-5 text-center">Event</h2>
             </a>
 
@@ -171,7 +171,6 @@
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{ route('events.index') }}">Event</a></li>
-                        <li><a href="{{ route('dashboard') }}">Register Event</a></li>
                     </ul>
 
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

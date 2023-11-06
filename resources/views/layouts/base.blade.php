@@ -16,12 +16,40 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/templatemo-edu-meeting.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/template.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/lightbox.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid/main.css" rel="stylesheet" />
+    <style>
+      #calendar tr th a{
+          color: #000 !important; 
+      }
+
+      .fc-event {
+        background-color: #ff8c00;
+        color: #fff;
+        border: 1px solid #ff8c00;
+        transition: .4s;
+      }
+
+      .fc-event:hover{
+        background-color: #bf6f0e;
+      }
+
+      .fc-toolbar h2{
+        font-size: 25px;
+      }
+
+      .fc-view-harness {
+        height: auto !important;
+      }
+
+      .fc-event-time{
+        display: none;
+      }
+    </style>
     @yield('css')
   </head>
 
@@ -76,7 +104,7 @@
                           @else
                             <li><a href="/login" class="bg-warning px-3">Login</a></li>
                           @endauth
-                      </ul>        
+                      </ul>     
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>
@@ -91,70 +119,7 @@
   @yield('content')
 
   <section class="contact-us" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 align-self-center">
-          <div class="row">
-            <div class="col-lg-12">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <h2>Let's get in touch</h2>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
-                  </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="right-info">
-            <ul>
-              <li>
-                <h6>Phone Number</h6>
-                <span>010-020-0340</span>
-              </li>
-              <li>
-                <h6>Email Address</h6>
-                <span>info@meeting.edu</span>
-              </li>
-              <li>
-                <h6>Street Address</h6>
-                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
-              </li>
-              <li>
-                <h6>Website URL</h6>
-                <span>www.meeting.edu</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    @yield('contact')
     <div class="footer">
       <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
           <br>
@@ -229,5 +194,6 @@
 
 
     @yield('js')
+
 </body>
 </html>

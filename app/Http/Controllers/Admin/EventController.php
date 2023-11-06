@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\EventUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -84,5 +86,28 @@ class EventController extends Controller
     public function destroy(Event $event){
         $event->delete();
         return back()->with('success','Event Deleted Successfully!');
+    }
+
+    public function show(Event $event){
+        return view("admin.events.join-users",compact("event"));
+    }
+
+    public function editStatus(Request $request, Event $event){
+        $eventuser = EventUser::where('user_id',$request->user_id)->where('event_id',$event->id)->first();
+        $event_user_id = $eventuser->id;
+        $event_status = $eventuser->status;
+        return view('admin.events.update-event-status',compact('event_user_id','event','event_status'));
+    }
+
+    public function updateStatus(Request $request, Event $event){
+        
+        $eventuser = EventUser::find($request->event_user_id);
+
+        $eventuser->status = $request->input('status');
+        
+        $eventuser->save();
+
+        return view("admin.events.join-users",compact("event"))->with('success','Status Updated Successfully!');
+
     }
 }

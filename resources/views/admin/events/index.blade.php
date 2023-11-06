@@ -66,6 +66,9 @@
                                         <a href="{{ route("events.edit",['event'=> $event]) }}" class="btn btn-primary shadow btn-xs sharp ">
                                             <i class="fa fa-pencil"></i>
                                         </a>
+                                        <a href="{{ route("events.show",['event'=> $event]) }}" class="btn btn-warning shadow btn-xs sharp ">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
                                         <a onclick="if(confirm('Are you Sure?')) document.getElementById('deleteEvent{{ $event->id }}').submit();" href="javascript:void(0)" class="btn btn-danger shadow btn-xs sharp ">
                                             <i class="fa fa-trash"></i>
                                         </a>

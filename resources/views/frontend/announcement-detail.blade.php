@@ -20,11 +20,11 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="caption">
-                <h2>{{ $announcement->title }}</h2>
-                <div class="d-flex align-items-center gap-3">
-                    <h6 class="text-warning">{{ $announcement->category }}</h6>
-                    <p>{{ Carbon\Carbon::parse($announcement->created_at)->format('M d , Y') }}</p>
-                </div>
+                    <h2>{{ $announcement->title }}</h2>
+                    <div class="d-flex align-items-center gap-3">
+                        <h6 class="text-warning">{{ $announcement->category }}</h6>
+                        <p>{{ Carbon\Carbon::parse($announcement->created_at)->format('M d , Y') }}</p>
+                    </div>
             </div>
                 </div>
               </div>

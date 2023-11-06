@@ -20,5 +20,11 @@ class Event extends Model
         'date',
         'day',
     ];
+    
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'event_users')
+            ->withPivot('status');
+    }
 
 }
