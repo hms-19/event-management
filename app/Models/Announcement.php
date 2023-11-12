@@ -11,4 +11,8 @@ class Announcement extends Model
 
     protected $fillable = ['title', 'content', 'category', 'image'];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -65,4 +65,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class, 'event_users')
             ->withPivot('status');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

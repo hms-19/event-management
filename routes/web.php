@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,6 +84,7 @@ Route::middleware([
     })->name('profile');
 
     Route::post('/register/event/{id}',[\App\Http\Controllers\EventController::class,'submitEvent'])->name('events.submit');
+    Route::post('/comments/{announcement_id}',[CommentController::class,'store'])->name('comments.store');
 });
 
 

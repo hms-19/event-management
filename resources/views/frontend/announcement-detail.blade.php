@@ -41,8 +41,43 @@
                         {!! $announcement->content !!}
                     </p>
                 </div>
+                <div class="col-md-8 my-5">
+                    <h3 class="mb-5">Comments</h3>
+
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Great !</strong>  {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <form action="{{ route("comments.store",['announcement_id' => $announcement->id]) }}" method="POST">
+                        @csrf
+                        <div class="form-group mb-2">
+                            <textarea name="content" id="" class="form-control" cols="30" rows="10" placeholder="What do you want to talk?"></textarea>
+                            @error('content')
+                                <i class="text-danger">{{ $message }}</i>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </form>
+                    <div class="row gap-2 mt-3">
+                        <div class="col-12">
+                            <div class="d-flex w-100 gap-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" style="width:60px !important;height:60px!important;" class="object-fit-cover rounded-full" alt="">
+                                <div class="card flex-1">
+                                    <div class="card-body">
+                                        <p class="text-dark fw-bold">Kyaw Kyaw</p>
+                                        <p class="text-dark">
+                                            Lorem ipsum dolor sit amet.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    
 @endsection
