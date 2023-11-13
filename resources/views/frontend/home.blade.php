@@ -71,10 +71,22 @@
           <div class="categories">
             <h4>Announcements categories</h4>
             <ul class="d-flex flex-column">
-              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 1">Category 1</a></li>
-              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 2">Category 2</a></li>
-              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 3">Category 3</a></li>
-              <li class="d-block"><a class="d-block" href="/announcements/?name=Category 4">Category 4</a></li>
+              @php
+                    $caretories = [
+                                  "Events",
+                                  "Activities",
+                                  "Futsal Tournaments",
+                                  "E-Sport Tournaments",
+                                  "Football Club",
+                                  "Badminton Club",
+                                  "Basketball Club",
+                                  "Art Club",
+                                  "Dance Club"
+                              ]
+                @endphp
+              @foreach ($caretories as $category)
+                <li class="d-block"><a class="d-block" href="/announcements/?name={{ $category }}">{{ $category }}</a></li>
+              @endforeach
             </ul>
             <div class="main-button-red">
               <a href="/announcements">All Announcements</a>
