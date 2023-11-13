@@ -87,7 +87,7 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="/" class="logo">
-                          Event 
+                         <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="100px" height="100px" class="object-fit-cover">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->

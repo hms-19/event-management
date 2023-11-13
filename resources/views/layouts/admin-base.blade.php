@@ -86,7 +86,7 @@
         ***********************************-->
         <div class="nav-header">
             <a href="/" class="brand-logo">
-                <h2 class="text-primary fw-bold fs-5 text-center">Event</h2>
+                <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="100px" height="100px" class="object-fit-cover">
             </a>
 
             <div class="nav-control">
