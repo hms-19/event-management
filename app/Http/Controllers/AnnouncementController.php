@@ -20,7 +20,6 @@ class AnnouncementController extends Controller
 
     public function show($id){
         $announcement = Announcement::find($id);
-        dd($announcement);
         return view('frontend.announcement-detail',compact('announcement'));
     }
 }

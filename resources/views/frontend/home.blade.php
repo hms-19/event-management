@@ -101,7 +101,7 @@
                             <a href="/announcements/{{ $announcement->id }}"><h4>{{ $announcement->title }}</h4></a>
                           </div>
                           <div class="">
-                            <a href="">
+                            <a href="/announcements/{{ $announcement->id }}#comment">
                               <i class="icon fa fa-comment"></i>
                             </a>
                           </div>
@@ -230,7 +230,7 @@
                             <span>{{ $announcement->category }}</span>
                           </div>
                           <div class="">
-                              <a href="">
+                              <a href="/announcements/{{ $announcement->id }}#comment">
                                 <i class="icon fa fa-comment"></i>
                               </a>
                           </div>
@@ -299,6 +299,42 @@
       </div>
     </div>
   </section>
+
+  <button type="button" class="position-fixed p-3" style="background-color: #a12c2f;border: none;outline:none; border-radius: 10px;right:10px;bottom: 20px;z-index:1000" data-bs-toggle="modal" data-bs-target="#notification">
+      <i class="fa fa-bell text-white"></i>
+  </button>
+
+  <div class="modal fade" id="notification" tabindex="-1" aria-labelledby="notificationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="notificationLabel">Latest Announcements</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          @if (count($announcements) > 0)
+            @foreach($announcements as $announcement)
+              <div class="col-lg-12">
+                <a href="/announcements/{{ $announcement->id }}" class="text-decoration-none">
+                  <div class="d-flex py-2 gap-3 align-items-center">
+                    <img src="{{ asset($announcement->image) }}" style="width:100px;height: 80px; object-fit:cover;border-radius:15px" alt="New Lecturer Meeting">
+                    <div>
+                      <h4 class="text-dark fw-bolder">{{ $announcement->title }}</h4>
+                      <div class="price">
+                        <span class="text-secondary">{{ $announcement->category }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            @endforeach
+        @else
+            <h3 class="text-center">There ios no announcements</h3>
+        @endif
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
 
 @section('contact')

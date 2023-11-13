@@ -37,10 +37,15 @@
 
                                     @php
                                         $caretories = [
-                                            "Category 1",
-                                            "Category 2",
-                                            "Category 3",
-                                            "Category 4",
+                                            "Events",
+                                            "Activities",
+                                            "Futsal Tournaments",
+                                            "E-Sport Tournaments",
+                                            "Football Club",
+                                            "Badminton Club",
+                                            "Basketball Club",
+                                            "Art Club",
+                                            "Dance Club"
                                         ]
                                     @endphp
                                     <select name="category" id="category" class="form-control default-select me-2 mb-3">

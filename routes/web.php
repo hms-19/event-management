@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AnnouncementController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\CommentController;
@@ -29,9 +30,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
     // users
 

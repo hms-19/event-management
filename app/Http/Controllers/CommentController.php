@@ -18,6 +18,6 @@ class CommentController extends Controller
             'content' => $request->content,
         ]);
 
-        return back()->with('success','Commented !');
+        return redirect(route('announcement.detail', [$request->announcement_id]). '#comment')->with('success','Commented !');
     }
 }
