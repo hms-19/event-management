@@ -773,10 +773,11 @@ services
 }
 
 .services .item {
-  background-image: url(../images/service-item-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  /* background-image: url(../images/service-item-bg.jpg); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center center; */
+  background: #fff;
   border-radius: 20px;
   text-align: center;
   color: #fff;
@@ -796,7 +797,7 @@ services
 }
 
 .services .item p {
-  color: #fff;
+  color: #000;
   font-size: 13px;
 }
 

@@ -9,8 +9,18 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">All Events</h4>
-                    <a href="{{ route("events.create") }}" class="btn btn-primary">Add New</a>
+                    <h4 class="card-title">Events & Clubs</h4>
+                    <div class="d-flex g-3 flex-wrap justify-content-center" style="gap: 10px">
+                        <form action="{{ route("events.index") }}" class="d-flex" method="get">
+                            <select name="type" id="" class="form-control">
+                                <option value="all">All</option>
+                                <option value="1">Events & Activities</option>
+                                <option value="0">Clubs</option>
+                            </select>
+                            <button class="btn btn-secondary rounded-none">Filter</button>
+                        </form>
+                        <a href="{{ route("events.create") }}" class="btn btn-primary">Add New</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">

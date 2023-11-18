@@ -3,7 +3,6 @@
 @section('title','Events')
 
 @section('content')
-
 <div class="w-100 h-100 d-flex justify-content-center align-items-start">
     <div class="container">
         <div class="row">
@@ -43,6 +42,7 @@
                                         ]
                                     @endphp
                                     <select name="program" id="program" class="form-control default-select me-2 mb-3">
+                                        <option value="">Select Program</option>
                                         @foreach ($programs as $program)
                                             @if ($program == $event->program)
                                                 <option value="{{ $program }}" selected>{{ \Illuminate\Support\Str::title($program) }}</option>
@@ -94,7 +94,7 @@
                                     @endif
 
                                     <div class="form-group">
-                                        <input type="text" id="start_time" name="start_time" value="{{ $event->start_time }}"  required autofocus  class="form-control input-default " placeholder="Enter Start Time">
+                                        <input type="text" class="form-control" id="timePicker" name="start_time" value="{{ $event->start_time }}" placeholder="Start time">
                                     </div>
                                     @error('start_time')
                                         <p class="text-danger mb-2">
@@ -103,7 +103,7 @@
                                     @enderror
 
                                     <div class="form-group">
-                                        <input type="text" id="end_time" name="end_time" required autofocus value="{{ $event->end_time }}"   class="form-control input-default " placeholder="Enter End Time">
+                                        <input type="text" class="form-control" id="timePicker" name="end_time" value="{{ $event->end_time }}" placeholder="End time">
                                     </div>
                                     @error('end_time')
                                         <p class="text-danger mb-2">
@@ -130,6 +130,14 @@
                                         </p>
                                     @enderror
 
+                                    <div class="form-group">
+                                        <textarea name="note" id="note" class="form-control" placeholder="Note" rows="10" value="{{ $event->note }}">{{ $event->note }}</textarea>
+                                    </div>
+                                    @error('note')
+                                        <p class="text-danger mb-2">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
 
                                     <button class="btn btn-info float-right" type="submit">Update</button>
                                 </form>

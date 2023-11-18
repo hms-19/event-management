@@ -23,6 +23,7 @@
     <link href="{{ asset('assets/backend/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/backend/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/backend/css/style.css') }}" rel="stylesheet">
+    
     <!-- Daterange picker -->
 
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
@@ -30,6 +31,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
 
     <style>
         /* preview img */
@@ -203,7 +205,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="../index.htm" target="_blank">DexignZone</a> 2021</p>
+                <p>Auston Student Community &copy; All rights reserved.</p>
             </div>
         </div>
         <!--**********************************
@@ -254,6 +256,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
 
     <script type="text/javascript">
 
@@ -325,6 +328,15 @@
             placeholder: $( this ).data( 'placeholder' ),
             closeOnSelect: false,
         } );
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#timePicker", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i K",
+            });
+        });
     </script>
 
     <script>

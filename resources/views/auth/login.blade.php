@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-12 mx-auto">
                         <h2 class="text-center text-primary mb-5">
-                            Event Management
+                           Auston Student Community
                         </h2>
                     </div>
                 </div>
@@ -58,20 +58,22 @@
                                         <form method="POST" action="{{ route('login') }}" class="w-100">
                                             @csrf
                                             <div class="form-group">
+                                                <label for="email">Email</label>
                                                 <input type="email" id="email" name="email" :value="old('email')" required autofocus  class="form-control input-default " placeholder="Enter Your Email">
                                             </div>
                                             <div class="form-group">
+                                                <label for="password">Password</label>
                                                 <input type="password" class="form-control input-default" id="password" name="password" required autocomplete="current-password" placeholder="Enter Your Password">
                                             </div>
 
-                                            <button class="btn btn-info d-block mx-auto" type="submit">Login</button>
+                                            <button class="btn btn-primary d-block mx-auto w-100" type="submit">Login</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="https://www.iona.edu/sites/default/files/styles/scale/public/2023-04/ancillary-images/three-students-mcspedon-sunny-day.jpg?itok=PeWIhPn6" alt="" class="w-100 h-100 object-cover">
+                        <img src="{{asset('assets/frontend/images/logo.png')}}" alt="" class="w-100 h-100 object-cover">
                     </div>
                 </div>
             </div>

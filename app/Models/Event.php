@@ -19,6 +19,7 @@ class Event extends Model
         'is_one_time',
         'date',
         'day',
+        'note'
     ];
     
     public function users()

@@ -28,13 +28,13 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">User Name</label>
-                                                <input type="text" class="form-control" id="name" value="{{ auth()->user()->name }}" disabled>
+                                                <input type="text" class="form-control" id="name" value="{{ $username }}" disabled>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="email" class="form-label">Email address</label>
-                                                <input type="email" class="form-control" id="email" value="{{ auth()->user()->email }}" disabled>
+                                                <input type="email" class="form-control" id="email" value="{{ $email }}" disabled>
                                             </div>
                                         </div>
                                     </div>

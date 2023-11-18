@@ -50,6 +50,7 @@
                                         ]
                                     @endphp
                                     <select name="role" id="role" class="form-control default-select me-2 mb-3">
+                                        <option value="">Select Role</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role }}">{{ \Illuminate\Support\Str::title($role) }}</option>
                                         @endforeach

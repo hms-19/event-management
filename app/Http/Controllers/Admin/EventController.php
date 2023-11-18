@@ -11,7 +11,23 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     public function index(){
-        $events = Event::orderBy('created_at','DESC')->paginate(10);
+        if(request()->has("type")){
+            $type = request("type");
+
+            if($type == "all"){
+                $events = Event::orderBy("created_at","desc")->paginate(10);
+            }
+            else if($type == "0"){
+                $events = Event::where('is_one_time',"0")->orderBy("created_at","desc")->paginate(10);
+            }
+            else if($type == "1"){
+                $events = Event::where('is_one_time',"1")->orderBy("created_at","desc")->paginate(10);
+            }
+
+        }
+        else{
+            $events = Event::orderBy('created_at','DESC')->paginate(10);
+        }
 
         return view("admin.events.index",compact("events"));
     }
@@ -45,6 +61,7 @@ class EventController extends Controller
             'is_one_time' => $request->is_one_time,
             'charges' => $request->charges ?? 0,
             'location' => $request->location ?? '',
+            'note' => $request->note ?? '',
         ]);
 
         return back()->with("success","Event Created Successfully !");
@@ -77,6 +94,7 @@ class EventController extends Controller
         $event->day = json_encode($request->input('day'));
         $event->charges = $request->input('charges') ?? 0;
         $event->location = $request->input('location');
+        $event->note = $request->input('note');
 
         $event->save();
 
@@ -96,7 +114,12 @@ class EventController extends Controller
         $eventuser = EventUser::where('user_id',$request->user_id)->where('event_id',$event->id)->first();
         $event_user_id = $eventuser->id;
         $event_status = $eventuser->status;
-        return view('admin.events.update-event-status',compact('event_user_id','event','event_status'));
+        $user = User::find($eventuser->user_id);
+
+        $username = $user->name;
+        $email = $user->email;
+        
+        return view('admin.events.update-event-status',compact('event_user_id','event','event_status','username','email'));
     }
 
     public function updateStatus(Request $request, Event $event){

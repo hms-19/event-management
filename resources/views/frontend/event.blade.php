@@ -81,7 +81,7 @@
             events: @json($events),
             eventClick: function(info) {
               if (info.event.url) {
-                window.open(info.event.url, '_blank'); 
+                window.open(info.event.url, '_self'); 
               }
             }
         });

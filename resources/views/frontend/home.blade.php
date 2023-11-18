@@ -1,6 +1,31 @@
 @extends('layouts.base')
 @section('title','Home')
     
+@section('css')
+    <style>
+.event-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .event-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-card h3 {
+            color: #333;
+        }
+
+        .event-card p {
+            color: #555;
+        }
+    </style>
+@endsection
 @section('content')
 
     <!-- ***** Main Banner Area Start ***** -->
@@ -34,23 +59,14 @@
         <div class="col-lg-12">
           <div class="owl-service-item owl-carousel">
             @foreach ($oneTimeEvents as $event)
-              <div class="item">
-                <div class="icon">
-                  <img src="{{ asset('assets/frontend/images/service-icon-01.png') }}" alt="">
-                </div>
-                <div class="down-content">
-                  <a href="/events/{{ $event->id }}">
-                    <h4>{{ $event->title }}</h4>
-                  </a>
-                  <h5 class="text-warning fw-bold">{{ $event->date }}</h5>
-                  <p>{{ $event->start_time.' - '.$event->end_time }}</p>
-                  <p>
-                    <i>{{ $event->location ?? 0 }}</i>
-                  </p>
-                  <p>
-                    <strong class="fs-4 fw-bold">{{ $event->charges == 0.00 ? 'Free' : $event->charges}}</strong>
-                  </p>
-                </div>
+              <div class="event-card">
+                <a href="/events/{{ $event->id }}" class="text-decoration-none">
+                  <h3 class="mb-3">{{ $event->title }}</h3>
+                  <p><strong>Date:</strong> {{ $event->date }}</p>
+                  <p><strong>Time:</strong> {{ $event->start_time.' - '.$event->end_time }}</p>
+                  <p><strong>Location:</strong> {{ $event->location ?? '-' }}</p>
+                  <p><strong>Charges:</strong> {{ $event->charges == 0.00 ? 'Free' : $event->charges}}</p>
+                </a>
               </div>
             @endforeach
           </div>
@@ -81,7 +97,9 @@
                                   "Badminton Club",
                                   "Basketball Club",
                                   "Art Club",
-                                  "Dance Club"
+                                  "Dance Club",
+                                  "Music Club",
+                                            "Blog Posts"
                               ]
                 @endphp
               @foreach ($caretories as $category)
@@ -131,7 +149,7 @@
     </div>
   </section>
 
-  <section class="apply-now" id="apply">
+  {{-- <section class="apply-now" id="apply">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 align-self-center">
@@ -217,43 +235,35 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <section class="our-courses" id="courses">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>You should check it out</h2>
+            <h2>Clubs</h2>
           </div>
         </div>
         <div class="col-lg-12">
-          @if (count($randomAnnouncements) > 0)
+          @if (count($longTimeEvents) > 0)
           <div class="owl-courses-item owl-carousel">
-            @foreach ($randomAnnouncements as $announcement)
-              <div class="item">
-                  <a href="/announcements/{{ $announcement->id }}">
-                    <img src="{{ asset($announcement->image) }}" alt="Course One" style="height: 200px; object-fit:cover;">
-                    <div class="down-content">
-                      <h4>{{ $announcement->title }}</h4>
-                      <div class="info">
-                        <div class="d-flex justify-content-between">
-                          <div class="">
-                            <span>{{ $announcement->category }}</span>
-                          </div>
-                          <div class="">
-                              <a href="/announcements/{{ $announcement->id }}#comment">
-                                <i class="icon fa fa-comment"></i>
-                              </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-              </div>
+            @foreach ($longTimeEvents as $event)
+            @php
+                  $days = json_decode($event->day);
+            @endphp
+            <div class="event-card">
+              <a href="/events/{{ $event->id }}" class="text-decoration-none">
+                <h3 class="mb-3">{{ $event->title }}</h3>
+                <p><strong>Days:</strong> {{ implode(",",$days) }}</p>
+                <p><strong>Time:</strong> {{ $event->start_time.' - '.$event->end_time }}</p>
+                <p><strong>Location:</strong> {{ $event->location ?? '-' }}</p>
+                <p><strong>Charges:</strong> {{ $event->charges == 0.00 ? 'Free' : $event->charges}}</p>
+              </a>
+            </div>
             @endforeach
           @else
-              <h3 class="text-center">There is no announcement !</h3>
+              <h3 class="text-center">There is no events !</h3>
           @endif
           </div>
         </div>
@@ -394,21 +404,24 @@
           <div class="right-info">
             <ul>
               <li>
+                <h6>Ma Miho, Executive Admin</h6>
+                <br>
                 <h6>Phone Number</h6>
-                <span>010-020-0340</span>
-              </li>
-              <li>
+                <span>09783112369</span>
+                <br>
                 <h6>Email Address</h6>
-                <span>info@meeting.edu</span>
+                <span>miho@st.auston.edu.mm</span>
               </li>
               <li>
-                <h6>Street Address</h6>
-                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+                <h6>Ma Thinn Yu, Executive Admin</h6>
+                <br>
+                <h6>Phone Number</h6>
+                <span>09763109030</span>
+                <br>
+                <h6>Email Address</h6>
+                <span>thinnyu@st.auston.edu.mm</span>
               </li>
-              <li>
-                <h6>Website URL</h6>
-                <span>www.meeting.edu</span>
-              </li>
+              
             </ul>
           </div>
         </div>

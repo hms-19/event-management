@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index'])->name('home');
-
 
 // Admin Routes
 
@@ -78,6 +76,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    Route::get('/', [HomeController::class,'index'])->name('home');
+
     Route::get('/profile', function () {
         return view('profile.show');
     })->name('profile');

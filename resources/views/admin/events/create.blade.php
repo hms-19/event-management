@@ -42,6 +42,7 @@
                                         ]
                                     @endphp
                                     <select name="program" id="program" class="form-control default-select me-2 mb-3">
+                                        <option value="">Select Program</option>
                                         @foreach ($programs as $program)
                                             <option value="{{ $program }}">{{ \Illuminate\Support\Str::title($program) }}</option>
                                         @endforeach
@@ -73,7 +74,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="text" id="start_time" name="start_time" required autofocus  class="form-control input-default " placeholder="Enter Start Time">
+                                        <input type="text" class="form-control" id="timePicker" name="start_time" placeholder="Start time">
                                     </div>
                                     @error('start_time')
                                         <p class="text-danger mb-2">
@@ -82,7 +83,7 @@
                                     @enderror
 
                                     <div class="form-group">
-                                        <input type="text" id="end_time" name="end_time" required autofocus  class="form-control input-default " placeholder="Enter End Time">
+                                        <input type="text" class="form-control" id="timePicker" name="end_time" placeholder="End time">
                                     </div>
                                     @error('end_time')
                                         <p class="text-danger mb-2">
@@ -104,6 +105,16 @@
                                         <input type="text" id="location" name="location"   class="form-control input-default " placeholder="Enter Location">
                                     </div>
                                     @error('location')
+                                        <p class="text-danger mb-2">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+
+
+                                    <div class="form-group">
+                                        <textarea name="note" id="note" class="form-control" placeholder="Note" rows="10"></textarea>
+                                    </div>
+                                    @error('note')
                                         <p class="text-danger mb-2">
                                             {{ $message }}
                                         </p>

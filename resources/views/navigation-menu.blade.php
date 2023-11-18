@@ -5,9 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="/">
                         Profile Management
-                    </a>
                 </div>
             </div>
 
@@ -61,6 +59,10 @@
                         </x-jet-dropdown>
                     </div>
                 @endif
+
+                <a href="/" class="" style="background: #e4a208 !important;padding: 7px 10px;color: #fff;">
+                    Home
+                </a>
 
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">

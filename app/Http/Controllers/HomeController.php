@@ -19,6 +19,12 @@ class HomeController extends Controller
                             ->limit(6)
                             ->get();
 
+            $longTimeEvents = Event::where('program',Auth::user()->role)
+                            ->where('is_one_time',"0")
+                            ->orderBy("created_at","desc")
+                            ->limit(6)
+                            ->get();
+
             if(count($oneTimeEvents) < 3){
                 $extra = Event::where('program','all')
                                     ->where('is_one_time',"1")
@@ -27,9 +33,18 @@ class HomeController extends Controller
                                     ->limit(6)
                                     ->get();
 
+                $longextra = Event::where('program','all')
+                                    ->where('is_one_time',"0")
+                                    ->orderBy("created_at","desc")
+                                    ->limit(6)
+                                    ->get();
+
                 $oneTimeEvents = collect($oneTimeEvents);
+                $longTimeEvents = collect($longTimeEvents);
+
 
                 $oneTimeEvents = $oneTimeEvents->merge($extra);
+                $longTimeEvents = $longTimeEvents->merge($longextra);
             }
         }
         else{
@@ -39,12 +54,18 @@ class HomeController extends Controller
                             ->orderBy("created_at","desc")
                             ->limit(6)
                             ->get();
+
+            $longTimeEvents = Event::where('program',"all")
+                            ->where('is_one_time',"0")
+                            ->orderBy("created_at","desc")
+                            ->limit(6)
+                            ->get();
         }
 
         $announcements = Announcement::orderBy('created_at','desc')->limit(4)->get();
 
         $randomAnnouncements = Announcement::inRandomOrder()->orderBy('created_at','desc')->limit(12)->get();
 
-        return view("frontend.home",compact("oneTimeEvents","announcements","randomAnnouncements"));
+        return view("frontend.home",compact("oneTimeEvents","longTimeEvents","announcements","randomAnnouncements"));
     }
 }

@@ -102,7 +102,8 @@
                             </div>
                         </div>
 
-                        @if ($event->is_one_time)
+                        <div class="row">
+                            @if ($event->is_one_time)
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="date" class="form-label">Date</label>
@@ -117,6 +118,12 @@
                                 </div>
                             </div>
                         @endif
+                        <div class="col-md-6">
+                            <p class="mb-3">
+                                <strong>Note - </strong> {{ $event->note }}
+                            </p>
+                        </div>
+                        </div>
 
                         <button type="submit" class="btn btn-primary">
                             Reister Event

@@ -4,9 +4,9 @@
 @section('content')
     <!-- ***** Main Banner Area Start ***** -->
     <section class="section main-banner" style="min-height: 60vh !important;max-height: 60vh !important;" id="top" data-section="section1">
-        <video autoplay muted loop id="bg-video" style="min-height: 60vh !important;max-height: 60vh !important;">
-            <source src="{{ asset('assets/frontend/images/course-video.mp4') }}" type="video/mp4" />
-        </video>
+      <div id="bg-video" style="min-height: 80vh !important;max-height: 80vh !important;">
+          <img src="https://umanitoba.ca/sites/default/files/styles/21x9_1100w/public/2023-08/Fall%20Orientation_Hero.jpg?itok=TtM0NVVI" style="width: 100%;height:100%;object-fit:cover;" alt="">
+      </div>
         <div class="video-overlay header-text">
             <div class="container">
               <div class="row">
@@ -39,7 +39,9 @@
                                     "Badminton Club",
                                     "Basketball Club",
                                     "Art Club",
-                                    "Dance Club"
+                                    "Dance Club",
+                                    "Music Club",
+                                    "Blog Posts"
                                 ]
                   @endphp
                   @foreach ($caretories as $category)

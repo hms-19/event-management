@@ -46,11 +46,14 @@
                                             "Badminton Club",
                                             "Basketball Club",
                                             "Art Club",
-                                            "Dance Club"
+                                            "Dance Club",
+                                            "Music Club",
+                                            "Blog Posts"
                                         ]
                                     @endphp
                                     <select name="category" id="category" class="form-control default-select me-2 mb-3">
                                         @foreach ($caretories as $category)
+                                            <option value="">Select Category</option>
                                             @if ($category == $announcement->category)
                                                 <option value="{{ $category }}" selected>{{ \Illuminate\Support\Str::title($category) }}</option> 
                                             @else

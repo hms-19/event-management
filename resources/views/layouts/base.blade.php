@@ -8,11 +8,11 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Event Management</title>
+    <title>Auston Student Community</title>
 
     <!-- Bootstrap core CSS -->
     {{-- <link href="{{ asset('assets/frontend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
-
+    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/logo.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Additional CSS Files -->
@@ -50,6 +50,7 @@
       .fc-event-time{
         display: none;
       }
+      
     </style>
     @yield('css')
   </head>
@@ -87,14 +88,14 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="/" class="logo">
-                         <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="100px" height="100px" class="object-fit-cover">
+                         <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="80px" height="80px" class="object-fit-cover">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                     
                       <ul class="nav">
                           <li><a href="/" class="{{ request()->segment(1) == null ? 'active' : '' }}">Home</a></li>
-                          <li><a href="/events" class="{{ request()->segment(1) == 'events' ? 'active' : '' }}">Event</a></li>
+                          <li><a href="/events" class="{{ request()->segment(1) == 'events' ? 'active' : '' }}">Calendar</a></li>
                           <li><a href="/announcements" class="{{ request()->segment(1) == 'announcements' ? 'active' : '' }}">Announcement</a></li> 
                           @auth
                             @if (auth()->user()->role == 'admin')

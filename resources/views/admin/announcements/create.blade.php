@@ -45,10 +45,13 @@
                                             "Badminton Club",
                                             "Basketball Club",
                                             "Art Club",
-                                            "Dance Club"
+                                            "Dance Club",
+                                            "Music Club",
+                                            "Blog Posts"
                                         ]
                                     @endphp
                                     <select name="category" id="category" class="form-control default-select me-2 mb-3">
+                                        <option value="">Select Category</option>
                                         @foreach ($caretories as $category)
                                             <option value="{{ $category }}">{{ \Illuminate\Support\Str::title($category) }}</option>
                                         @endforeach
