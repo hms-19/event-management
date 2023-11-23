@@ -876,11 +876,11 @@
 				datasets: [{
 					label: "Sales Stats",
 					backgroundColor: "rgba(100, 24, 195, .5)",
-					borderColor: '#6418C3',
-					pointBackgroundColor: '#6418C3',
-					pointBorderColor: '#6418C3',
-					pointHoverBackgroundColor: '#6418C3',
-					pointHoverBorderColor: '#6418C3',
+					borderColor: '#242f67',
+					pointBackgroundColor: '#242f67',
+					pointBorderColor: '#242f67',
+					pointHoverBackgroundColor: '#242f67',
+					pointHoverBorderColor: '#242f67',
 					data: [0, 18, 14, 24, 16, 30]
 				}]
 			},

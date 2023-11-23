@@ -39,7 +39,7 @@
                                         $caretories = [
                                             "Events",
                                             "Activities",
-                                            "Futsal Tournaments",
+                                            "Sports Tournaments",
                                             "E-Sport Tournaments",
                                             "Football Club",
                                             "Badminton Club",

@@ -68,4 +68,10 @@ class EventController extends Controller
         return back()->with("success","Event registered successfully !");
     }
 
+    public function history(){
+       
+        $events = Auth::user()->events;
+        
+        return view("frontend.event-history",compact("events"));
+    }
 }

@@ -51,7 +51,7 @@
 			bars: {
 				show: true,
 				lineWidth: 0,
-				fillColor: '#6418C3'
+				fillColor: '#242f67'
 			}
 		}], 
 		{
@@ -89,7 +89,7 @@
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#6418C3'
+				color: '#242f67'
 			}
 		],
 		{
@@ -147,7 +147,7 @@
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#6418C3'
+				color: '#242f67'
 			}
 		],
 		{
@@ -210,7 +210,7 @@
 			{
 				data: retCust2,
 				label: 'Returning Customer',
-				color: '#6418C3'
+				color: '#242f67'
 			}
 		],
 		{
@@ -268,7 +268,7 @@
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#6418C3'
+				color: '#242f67'
 			}
 		],
 		{
@@ -327,7 +327,7 @@
 			{
 				data: retCust,
 				label: 'Returning Customer',
-				color: '#6418C3'
+				color: '#242f67'
 			}
 		],
 		{

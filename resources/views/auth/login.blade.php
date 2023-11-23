@@ -40,23 +40,16 @@
         <div class="w-100 vh-100 d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 mx-auto">
-                        <h2 class="text-center text-primary mb-5">
-                           Auston Student Community
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
                     <div class="col-md-6 mx-auto">
                             <div class="card" style="height: 100% !important">
-                                <div class="card-header">
-                                    <h4 class="card-title">Login</h4>
-                                </div>
                                 <div class="card-body d-flex flex-column gap-5 justify-content-center align-items-start w-100">
                                     <x-jet-validation-errors class="mb-4 text-danger" />
                                     <div class="basic-form w-100">
                                         <form method="POST" action="{{ route('login') }}" class="w-100">
                                             @csrf
+                                            <h2 class="text-center text-black mb-5">
+                                                Auston Student Community
+                                            </h2>
                                             <div class="form-group">
                                                 <label for="email">Email</label>
                                                 <input type="email" id="email" name="email" :value="old('email')" required autofocus  class="form-control input-default " placeholder="Enter Your Email">
@@ -65,8 +58,27 @@
                                                 <label for="password">Password</label>
                                                 <input type="password" class="form-control input-default" id="password" name="password" required autocomplete="current-password" placeholder="Enter Your Password">
                                             </div>
+                                            <div class="d-flex my-3 justify-content-between align-items-center">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="remember">{{ __('Remember Me') }}</label>
+                                                </div>
+                                                <div class="text-center">
+                                                    @if (Route::has('password.request'))
+                                                        <a href="">{{ __('Forgot Your Password?') }}</a>
+                                                    @endif
+                                                </div>    
+                                            </div>                    
+                                            <button class="btn btn-secondary d-block mx-auto w-100" type="submit">Login</button>
 
-                                            <button class="btn btn-primary d-block mx-auto w-100" type="submit">Login</button>
+                                            <div class="card-footer text-muted">
+                                                <div class="text-center">
+                                                    <a href="">Privacy Policy</a> |
+                                                    <a href="">Cookie Policy</a> |
+                                                    <a href="">Terms of Use</a>
+                                                </div>
+                                                <p class="mt-2 text-center">&copy; {{ date('Y') }} Auston Student Community . All rights reserved.</p>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

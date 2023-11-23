@@ -30,7 +30,7 @@
 				}],
 				resize: true,
 				redraw: true,
-				colors: ['#eb8153', 'rgb(255, 92, 0)', '#6418C3'],
+				colors: ['#eb8153', 'rgb(255, 92, 0)', '#242f67'],
 				//responsive:true,
 				
 			});
@@ -142,7 +142,7 @@
 				labels: ['Phone', 'Windows', 'Mac'],
 				pointSize: 3,
 				fillOpacity: 0,
-				pointStrokeColors: ['#FF3E3E', '#6418C3', '#eb8153'],
+				pointStrokeColors: ['#FF3E3E', '#242f67', '#eb8153'],
 				behaveLikeLine: true,
 				gridLineColor: 'transparent',
 				lineWidth: 3,
@@ -198,7 +198,7 @@
 					xkey: 'y',
 					ykeys: ['a', 'b', 'c'],
 					labels: ['A', 'B', 'C'],
-					barColors: ['#eb8153', '#6418C3', '#ff9f00'],
+					barColors: ['#eb8153', '#242f67', '#ff9f00'],
 					hideHover: 'auto',
 					gridLineColor: 'transparent',
 					resize: true,

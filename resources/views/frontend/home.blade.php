@@ -39,11 +39,11 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="caption">
-              <h6>Hello Students</h6>
-              <h2>Welcome to Education</h2>
-              <p>This is an edu meeting HTML CSS template provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, a group of young people by <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.</p>
+              <h6>Hello Austonian!</h6>
+              <h2>Welcome to Auston Student Community </h2>
+              <p>The Auston Student Community website offers a centralized platform for students, providing essential features such as an interactive event calendar, enabling easy access to upcoming activities. Students can seamlessly register for various events and activities and join clubs through the user-friendly interface. Additionally, the website hosts a rich multimedia section, showcasing vibrant photos and videos captured during events and club </p>
               <div class="main-button-red">
-                  <div><a href="#contact">Join Us Now!</a></div>
+                  <div><a href="/event">See Calendar</a></div>
               </div>
           </div>
               </div>
@@ -61,7 +61,7 @@
             @foreach ($oneTimeEvents as $event)
               <div class="event-card">
                 <a href="/events/{{ $event->id }}" class="text-decoration-none">
-                  <h3 class="mb-3">{{ $event->title }}</h3>
+                  <h3 class="mb-3 fs-5 text-center">{{ $event->title }}</h3>
                   <p><strong>Date:</strong> {{ $event->date }}</p>
                   <p><strong>Time:</strong> {{ $event->start_time.' - '.$event->end_time }}</p>
                   <p><strong>Location:</strong> {{ $event->location ?? '-' }}</p>
@@ -91,7 +91,7 @@
                     $caretories = [
                                   "Events",
                                   "Activities",
-                                  "Futsal Tournaments",
+                                  "Sports Tournaments",
                                   "E-Sport Tournaments",
                                   "Football Club",
                                   "Badminton Club",
@@ -254,7 +254,7 @@
             @endphp
             <div class="event-card">
               <a href="/events/{{ $event->id }}" class="text-decoration-none">
-                <h3 class="mb-3">{{ $event->title }}</h3>
+                <h3 class="mb-3 fs-5 text-center">{{ $event->title }}</h3>
                 <p><strong>Days:</strong> {{ implode(",",$days) }}</p>
                 <p><strong>Time:</strong> {{ $event->start_time.' - '.$event->end_time }}</p>
                 <p><strong>Location:</strong> {{ $event->location ?? '-' }}</p>
@@ -322,15 +322,20 @@
     </div>
   </section>
 
-  <button type="button" class="position-fixed p-3" style="background-color: #a12c2f;border: none;outline:none; border-radius: 10px;right:10px;bottom: 20px;z-index:1000" data-bs-toggle="modal" data-bs-target="#notification">
-      <i class="fa fa-bell text-white"></i>
+  <button type="button" class="position-fixed p-3" style="background-color: #fdcc06;border: none;outline:none; border-radius: 10px;right:10px;bottom: 20px;z-index:1000" data-bs-toggle="modal" data-bs-target="#notification">
+    <div class="position-relative">
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger z-50" style="z-index: 3 !important;">
+        3
+      </span>  
+      <i class="fa fa-bell text-white fs-4"></i>
+    </div>
   </button>
 
   <div class="modal fade" id="notification" tabindex="-1" aria-labelledby="notificationLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="notificationLabel">Latest Announcements</h5>
+          <h5 class="modal-title" id="notificationLabel">Latest Messages</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -341,7 +346,7 @@
                   <div class="d-flex py-2 gap-3 align-items-center">
                     <img src="{{ asset($announcement->image) }}" style="width:100px;height: 80px; object-fit:cover;border-radius:15px" alt="New Lecturer Meeting">
                     <div>
-                      <h4 class="text-dark fw-bolder">{{ $announcement->title }}</h4>
+                      <h6 class="text-dark fw-bolder fs-5">{{ $announcement->title }}</h6>
                       <div class="price">
                         <span class="text-secondary">{{ $announcement->category }}</span>
                       </div>
@@ -404,22 +409,22 @@
           <div class="right-info">
             <ul>
               <li>
-                <h6>Ma Miho, Executive Admin</h6>
+                <h5>Ma Miho, Executive Admin</h5>
                 <br>
-                <h6>Phone Number</h6>
-                <span>09783112369</span>
+                <p class="fw-bold">Phone Number</p>
+                <p>09783112369</p>
                 <br>
-                <h6>Email Address</h6>
-                <span>miho@st.auston.edu.mm</span>
+                <p class="fw-bold">Email Address</p>
+                <p>miho@st.auston.edu.mm</p>
               </li>
               <li>
-                <h6>Ma Thinn Yu, Executive Admin</h6>
+                <h5>Ma Thinn Yu, Executive Admin</h5>
                 <br>
-                <h6>Phone Number</h6>
-                <span>09763109030</span>
+                <p class="fw-bold">Phone Number</p>
+                <p>09763109030</p>
                 <br>
-                <h6>Email Address</h6>
-                <span>thinnyu@st.auston.edu.mm</span>
+                <p class="fw-bold">Email Address</p>
+                <p>thinnyu@st.auston.edu.mm</p>
               </li>
               
             </ul>

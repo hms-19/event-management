@@ -84,7 +84,7 @@
 				height: "200",
 				barWidth: 6,
 				barSpacing: 7,
-				barColor: "#6418C3"
+				barColor: "#242f67"
 			});
 		}	
 	}
@@ -114,7 +114,7 @@
 					height: "200",
 					barWidth: 10,
 					barSpacing: 7, 
-					stackedBarColor: ['#eb8153', '#6418C3', '#ff5c00']
+					stackedBarColor: ['#eb8153', '#242f67', '#ff5c00']
 				});
 		}
 	}
@@ -127,7 +127,7 @@
 				height: "200",
 				barWidth: 10,
 				barSpacing: 7, 
-				colorMap: ['#eb8153', '#6418C3', '#ff5c00'], 
+				colorMap: ['#eb8153', '#242f67', '#ff5c00'], 
 				negBarColor: '#ff5c00'
 			});
 		}
@@ -155,8 +155,8 @@
 				type: 'line',
 				width: '100%',
 				height: '200', 
-				barColor: '#6418C3', 
-				colorMap: ['#6418C3', '#ff5c00']
+				barColor: '#242f67', 
+				colorMap: ['#242f67', '#ff5c00']
 			});
 		}
 		if(jQuery('#sparkline-composite-chart').length > 0 ){

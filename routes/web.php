@@ -82,12 +82,15 @@ Route::middleware([
         return view('profile.show');
     })->name('profile');
 
+
+    Route::get('/announcements',[\App\Http\Controllers\AnnouncementController::class,'index'])->name('announcement.list');
+    Route::get('/announcements/{id}',[\App\Http\Controllers\AnnouncementController::class,'show'])->name('announcement.detail');
+    Route::get('/events',[\App\Http\Controllers\EventController::class,'index'])->name('events.list');
+    Route::get('/events/history',[\App\Http\Controllers\EventController::class,'history'])->name('events.history');
+    Route::get('/events/{id}',[\App\Http\Controllers\EventController::class,'register'])->name('events.register');
+
+
     Route::post('/register/event/{id}',[\App\Http\Controllers\EventController::class,'submitEvent'])->name('events.submit');
     Route::post('/comments/{announcement_id}',[CommentController::class,'store'])->name('comments.store');
 });
 
-
-Route::get('/announcements',[\App\Http\Controllers\AnnouncementController::class,'index'])->name('announcement.list');
-Route::get('/announcements/{id}',[\App\Http\Controllers\AnnouncementController::class,'show'])->name('announcement.detail');
-Route::get('/events',[\App\Http\Controllers\EventController::class,'index'])->name('events.list');
-Route::get('/events/{id}',[\App\Http\Controllers\EventController::class,'register'])->name('events.register');

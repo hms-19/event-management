@@ -164,7 +164,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li><a href="{{ route('users.index') }}">User Management</a></li>
+                            <li><a href="{{ route('users.index') }}">List of Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -334,7 +334,7 @@
             flatpickr("#timePicker", {
                 enableTime: true,
                 noCalendar: true,
-                dateFormat: "H:i K",
+                dateFormat: "h:i K",
             });
         });
     </script>

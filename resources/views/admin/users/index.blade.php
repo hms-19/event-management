@@ -58,7 +58,9 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            @if ($user->role == 'pre-foundation')
+                                            <div class="badge badge-info">user</div>                                                                                                     
+
+                                            {{-- @if ($user->role == 'pre-foundation')
                                                 <div class="badge badge-info">{{ $user->role }}</div>                                                                                                     
                                             @else
                                                 @if ($user->role == 'foundation')
@@ -66,7 +68,7 @@
                                                 @else
                                                     <div class="badge badge-success">{{ $user->role }}</div>                                                                                                            
                                                 @endif
-                                            @endif
+                                            @endif --}}
                                         </td>
                                         <td>{{ Carbon\Carbon::parse($user->created_at)->format('d-m-Y') }}</td>
                                         <td>

@@ -63,16 +63,16 @@
       <div class="row">
         <div class="col-lg-8 col-sm-8">
           <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+            <p>This is the official website of Auston Student Community.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              {{-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
             </ul>
           </div>
         </div>
@@ -88,7 +88,7 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="/" class="logo">
-                         <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="80px" height="80px" class="object-fit-cover">
+                         <img src="{{ asset('assets/frontend/images/header-logo.png') }}" alt="" width="80px" height="80px" class="object-fit-cover">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
@@ -123,12 +123,14 @@
   <section class="contact-us" id="contact">
     @yield('contact')
     <div class="footer">
-      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
-          <br>
-          Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
-          <br>
-          Distibuted By: <a href="https://themewagon.com" target="_blank" title="Build Better UI, Faster">ThemeWagon</a>
-        </p>
+      <div class="card-footer text-muted">
+          <div class="text-center">
+              <a href="">Privacy Policy</a> |
+              <a href="">Cookie Policy</a> |
+              <a href="">Terms of Use</a>
+          </div>
+          <p class="mt-2 text-center">&copy; {{ date('Y') }} Auston Student Community . All rights reserved.</p>
+      </div>
     </div>
   </section>
 

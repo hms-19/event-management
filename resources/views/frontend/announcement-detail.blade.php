@@ -50,7 +50,7 @@
                 <div class="col-md-8 my-5">
                     <div class="d-flex gap-3 mb-5">
                         <h3 class="">Comments</h3>
-                        <button type="button" class="text-white p-2" style="background-color: #a12c2f;border: none;outline:none; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#comments">
+                        <button type="button" class="text-white p-2" style="background-color: #fdcc06;border: none;outline:none; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#comments">
                             Add New Comment
                         </button>
                     </div>
