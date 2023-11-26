@@ -4,8 +4,13 @@
     <div class="messenger-listView {{ !!$id ? 'conversation-active' : '' }}">
         {{-- Header and search bar --}}
         <div class="m-header">
-            <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
+            <nav class="header-status">
+                <a href="#">
+                 <div class="messager-logo">
+                    <img style="border-radius: 50%" src="{{ Chatify::getUserWithAvatar(auth()->user())->avatar }}" alt="" srcset="" width="40" height="40">
+                     <span class="messenger-headTitle">{{ auth()->user()->name }}</span>
+                    </div>
+                    </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
@@ -56,7 +61,7 @@
                 {{-- header back button, avatar and user name --}}
                 <div class="chatify-d-flex chatify-justify-content-between chatify-align-items-center">
                     <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a>
-                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
+                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px; background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/1200px-Facebook_Messenger_logo_2020.svg.png')">
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
                 </div>

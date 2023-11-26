@@ -98,6 +98,8 @@ body {
 }
 .messenger-headTitle {
   margin: 0rem 0.7rem;
+  text-transform: capitalize;
+  margin-top: 1px;
 }
 .messenger {
   display: inline-flex;
@@ -118,6 +120,10 @@ body {
   width: 45%;
   min-width: 200px;
   overflow: auto;
+}
+.messager-logo{
+  display: flex;
+  align-items: center;
 }
 .messenger-listView .m-header {
   height: var(--listView-header-height);
@@ -146,11 +152,22 @@ body {
   font-weight: 600;
   background: transparent;
 }
+
 .m-header-right {
   display: flex;
   align-items: center;
   gap: 1rem;
   float: right;
+}
+.setting{
+  font-weight: bold;
+  color: #0085ef;
+  font-size: 25px;
+}
+.header-status{
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 .m-header-messaging {
   position: relative;

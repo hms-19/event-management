@@ -1,5 +1,5 @@
 {{-- user info and avatar --}}
-<div class="avatar av-l chatify-d-flex"></div>
+<div class="avatar av-l chatify-d-flex" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/1200px-Facebook_Messenger_logo_2020.svg.png')"></div>
 <p class="info-name">{{ config('chatify.name') }}</p>
 <div class="messenger-infoView-btns">
     <a href="#" class="danger delete-conversation">Delete Conversation</a>
