@@ -644,6 +644,8 @@ channel.bind("messaging", function (data) {
       .remove();
   }
 
+  console.log(data);
+
   playNotificationSound(
     "new_message",
     !(data.from_id == getMessengerId() && data.to_id == auth_id)
@@ -1279,6 +1281,7 @@ $(document).ready(function () {
             .find("tr[data-action]")
             .attr("data-action") == "1"
         ) {
+          console.log('hla')
           $(".messenger-listView").hide();
         }
         IDinfo(getMessengerId());
