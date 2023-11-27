@@ -88,6 +88,10 @@ a {
   color: #3CF;
 }
 
+.messager-icon{
+  margin: 25px 10px 0 5px;
+}
+
 a:hover {
 	color: #FC3;
 }
@@ -1683,6 +1687,10 @@ section.meetings-page .pagination ul li a:hover {
 	.templatemo-item-col {
 		width: 45%;
 	}
+
+  .messager-icon{
+    margin: 36px 69px 0 5px;
+  }
 }
 
 @media (max-width: 767px) {
