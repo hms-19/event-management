@@ -64,7 +64,7 @@ $lastMessageBody = strlen($lastMessageBody) > 30 ? mb_substr($lastMessageBody, 0
 
 {{-- -------------------- Search Item -------------------- --}}
 @if($get == 'search_item')
-<table class="" data-contact="{{ $user->id }}">
+<table class="messenger-list-item" data-contact="{{ $user->id }}">
     <tr data-action="0">
         {{-- Avatar side --}}
         <td>
