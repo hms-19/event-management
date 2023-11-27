@@ -124,9 +124,9 @@
                                     <p class="relative">
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/1200px-Facebook_Messenger_logo_2020.svg.png"
                                             alt="" srcset="" width="30" height="30">
-                                            <span class="position-absolute top-3 right-3 translate-middle badge rounded-pill bg-danger z-50" style="z-index: 3 !important;">
+                                            {{-- <span class="position-absolute top-3 right-3 translate-middle badge rounded-pill bg-danger z-50" style="z-index: 3 !important;">
                                               3
-                                            </span>
+                                            </span> --}}
                                     </p>
                                 </a>
                             </div>
