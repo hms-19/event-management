@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
 use App\Models\Event;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -65,7 +66,8 @@ class HomeController extends Controller
         $announcements = Announcement::orderBy('created_at','desc')->limit(4)->get();
 
         $randomAnnouncements = Announcement::inRandomOrder()->orderBy('created_at','desc')->limit(12)->get();
+        $unreadMessage=DB::table('ch_messages')->where('to_id',auth()->user()->id)->where('seen',false)->count();
 
-        return view("frontend.home",compact("oneTimeEvents","longTimeEvents","announcements","randomAnnouncements"));
+        return view("frontend.home",compact("oneTimeEvents","longTimeEvents","announcements","randomAnnouncements","unreadMessage"));
     }
 }
