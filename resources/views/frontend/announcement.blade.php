@@ -13,8 +13,9 @@
                 <div class="col-lg-12">
                   <div class="caption">
                 <h6>Hello Students</h6>
-                <h2>Announcements List</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nihil earum doloribus ex. Id hic nisi doloribus sint perferendis ducimus?</p>
+                <h2>Announcements</h2>
+                <p>Discover the latest updates on upcoming events, club information, and insightful blog posts highlighting the success stories and memorable moments from past events and tournaments. Stay in the loop, engage with our community, and relive the excitement through our announcement page. Your journey into a world of events and shared experiences begins here.
+                </p>
             </div>
                 </div>
               </div>
