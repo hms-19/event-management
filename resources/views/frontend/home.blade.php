@@ -325,7 +325,7 @@
   <button type="button" class="position-fixed p-3" style="background-color: #fdcc06;border: none;outline:none; border-radius: 10px;right:10px;bottom: 20px;z-index:1000" data-bs-toggle="modal" data-bs-target="#notification">
     <div class="position-relative">
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger z-50" style="z-index: 3 !important;">
-        3
+        6
       </span>  
       <i class="fa fa-bell text-white fs-4"></i>
     </div>
