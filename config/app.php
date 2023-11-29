@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'Asia/Yangon',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,7 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-        \Chatify\ChatifyServiceProvider::class,
 
     ],
 
@@ -232,7 +231,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Chatify' => Chatify\Facades\ChatifyMessenger::class,
 
     ],
 
