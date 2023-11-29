@@ -94,12 +94,7 @@
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <div
-                            style="
-                        display: flex;
-                        justify-content: end;
-                        align-items: center;
-                    ">
+                        <div class="d-md-flex justify-content-end align-items-center">
                             <ul class="nav">
                                 <li><a href="/"
                                         class="{{ request()->segment(1) == null ? 'active' : '' }}">Home</a></li>

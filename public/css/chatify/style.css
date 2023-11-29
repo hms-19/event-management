@@ -1081,9 +1081,7 @@ div.loadingPlaceholder-date {
     width: 100%;
     max-width: unset;
   }
-  .listView-x {
-    display: none;
-  }
+
   .app-modal-container {
     transform: unset;
   }

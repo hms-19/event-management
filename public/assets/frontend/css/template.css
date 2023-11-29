@@ -89,7 +89,7 @@ a {
 }
 
 .messager-icon{
-  margin: 25px 10px 0 5px;
+  margin: 29px 10px 0 5px;
 }
 
 a:hover {
@@ -1697,6 +1697,11 @@ section.meetings-page .pagination ul li a:hover {
 	.templatemo-item-col {
 		width: 100%;
 	}
+  .messager-icon{
+    position: absolute;
+    top: 0px;
+    right: 23px;
+  }
 }
 
 /* 
