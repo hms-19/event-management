@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Registration List</h4>
+                    <h4 class="card-title">List Of Users</h4>
                     <a href="{{ route("users.create") }}" class="btn btn-primary">Add New</a>
                 </div>
                 <div class="card-body">
