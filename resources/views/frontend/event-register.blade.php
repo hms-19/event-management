@@ -126,7 +126,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-secondary" style="background-color:#fdcc06;border : 1px solid #fdcc06; ">
-                            Reister
+                            Register
                         </button>
                     </form>
                 </div>
